@@ -33,19 +33,19 @@ export default function Home() {
   }, []);
 
   if (isLoading) {
-    return <LoadingGrid />
+    return <LoadingGrid />;
   }
 
   if (isError) {
-    return <ErrorComponent />
+    return <ErrorComponent />;
   }
 
   const bouquets: Bouquet[] = data;
 
   return (
     <div className="container mx-auto p-6">
-            <div>
-        <div className="flex justify-between items-center mb-6">
+      <div>
+        <div className="flex flex-col md:flex-row  justify-between items-center mb-6">
           <h2 className="text-2xl font-semibold">Bouquet List</h2>
           <div className="flex gap-4 items-center">
             <SelectBouquetsModal bouquets={bouquets} />
